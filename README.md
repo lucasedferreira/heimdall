@@ -1,4 +1,4 @@
-# Heimdall 🚪
+/# Heimdall 🚪
 
 The purpose of this project is to controll the door lock with an app.
 
@@ -59,7 +59,7 @@ docker run -d \
 ### Back-end
 
 - API `http://localhost/2424`
-  - Documentation `In progress`
+  - [Documentation](server)
 
 ## 🧪 Testing the project
 `In progress`
