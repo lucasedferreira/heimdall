@@ -1,4 +1,4 @@
-# Heimdall
+# 🚪 Heimdall
 
 The purpose of this project is to controll the door lock with an app.
 
@@ -10,4 +10,31 @@ Install these dependencies in your system, using the system package manager:
 - psql
 
 ## Getting start
-`in progress`
+
+Install npm packages
+- `make install`
+
+Run the server
+```
+cd server
+npm run start
+```
+
+Run the client
+`In progress`
+
+## Access the platform
+
+### DB admin
+
+- Adminer `http://localhost:9333/?pgsql=postgres&username=postgres`
+  - use the password `heimdall123`
+
+### Front-end
+
+`In progress`
+
+### Back-end
+
+- API `http://localhost/2424`
+  - Documentation `In progress`
