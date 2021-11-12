@@ -1,0 +1,24 @@
+services:
+  postgres:
+    container_name: heimdall-postgres
+    image: postgres
+    networks:
+      - heimdall
+    environment:
+      - POSTGRES_PASSWORD=heimdall123
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    ports:
+      - 2425:5432
+  adminer:
+    container_name: heimdall-adminer
+    image: adminer
+    networks:
+      - heimdall
+    ports:
+      - 2426:8080
+    depends_on:
+      - postgres
+networks:
+  heimdall:
+    name: heimdall
+    driver: bridge
