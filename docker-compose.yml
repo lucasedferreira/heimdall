@@ -1,24 +1,30 @@
+version: '3.5'
+
 services:
   postgres:
-    container_name: heimdall-postgres
+    container_name: postgres
     image: postgres
-    networks:
-      - heimdall
+    user: postgres
     environment:
-      - POSTGRES_PASSWORD=heimdall123
-      - POSTGRES_HOST_AUTH_METHOD=trust
+      POSTGRES_PASSWORD: "heimdall123"
+      POSTGRES_DB: "testedb"
     ports:
-      - 2425:5432
-  adminer:
-    container_name: heimdall-adminer
-    image: adminer
+      - "5432:5432"
+    volumes:
+      - /home/renatogroffe/Desenvolvimento/Docker/Volumes/MySql:/var/lib/mysql
     networks:
       - heimdall
+
+  adminer:
+    container_name: adminer
+    image: adminer
     ports:
-      - 2426:8080
+      - 8080:8080
+    networks:
+      - heimdall
     depends_on:
       - postgres
-networks:
+
+networks: 
   heimdall:
-    name: heimdall
     driver: bridge
