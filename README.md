@@ -1,4 +1,4 @@
-# 🚪 Heimdall
+# Heimdall 🚪
 
 The purpose of this project is to controll the door lock with an app.
 
