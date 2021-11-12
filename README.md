@@ -12,7 +12,9 @@ Install these dependencies in your system, using the system package manager:
 ## 🚀 Getting start
 
 Install npm packages
-- `make install`
+```
+make install
+```
 
 Run the server
 ```
@@ -21,7 +23,27 @@ npm run start
 ```
 
 Run the client
+
 `In progress`
+
+## 🗄️ Creating local databases
+
+### Using Docker
+
+We recommend to use Docker to run PostgreSQL database service.
+
+With Adminer:
+```
+docker-compose up -d
+```
+
+If you prefer to use another tool for manage the db, just run:
+```
+docker run -d \
+--name postgres \
+-e POSTGRES_PASSWORD=heimdall123 \
+-p 5432:5432 postgres
+```
 
 ## ☕ Access the platform
 
