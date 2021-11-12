@@ -6,6 +6,15 @@ class DoorController {
     this.res = res;
   }
 
+  async status() {
+    const doorID = this.req.params.doorID;
+    const doorRepository = new DoorRepository();
+    const doorIsOpen = await doorRepository.checkIfIsOpen(doorID);
+    this.res.status(200).send({
+      isOpen: doorIsOpen
+    });
+  }
+
   async open() {
     let door = {
       ...this.req.body,

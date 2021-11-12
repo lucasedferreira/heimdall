@@ -11,9 +11,8 @@ app.use(express.urlencoded({ extended: true }));
 const DoorController = require('./src/controllers/DoorController');
 
 app.get("/status/:doorID", (req, res) => {
-  res.status(200).send({
-    isOpen: true
-  });
+  const doorControler = new DoorController(req, res);
+  doorControler.status();
 });
 
 app.post("/open/:doorID", (req, res) => {
