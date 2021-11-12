@@ -1,6 +1,6 @@
 # Heimdall 🚪
 
-The purpose of this project is to controll the door lock with an app.
+The purpose of this project is to manage the door lock with an app.
 
 ## 📦 Dependencies
 
