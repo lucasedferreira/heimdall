@@ -16,7 +16,7 @@ Require a valid Token included in the header of the request.
 
 Each endpoint manipulates or displays information related to the **Door status** whose **ID** is provided with the url:
 
-- [Get Status](doc/status/status.md) : `GET /status/:doorID`
+- [Show Status](doc/status/status.md) : `GET /status/:doorID`
 - [Update Status to Open](doc/status/open.md) : `POST /open/:doorID`
 - [Update Status to Closed](doc/status/close.md) : `POST /close/:doorID`
 
