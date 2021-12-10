@@ -3,6 +3,7 @@ import "./container.scss";
 import Button from 'react-bootstrap/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDoorClosed, faDoorOpen } from '@fortawesome/free-solid-svg-icons'
+import api from "../../services/api/api";
 
 class Container extends React.Component {
 
@@ -15,10 +16,34 @@ class Container extends React.Component {
     }
 
     componentDidMount = () => {
+        this.getDoorStatus();
+    }
+
+    getDoorStatus = async () => {
+        api
+            .get("/status/1")
+            .then(response => {
+                let isOpen = response.data.isOpen;
+                this.setState({ isOpen });
+                console.log('is open', isOpen)
+            });
     }
 
     toggle = () => {
+        if(this.state.isOpen) {
+            this.closeDoor();
+        } else {
+            this.openDoor();
+        }
         this.setState({ isOpen: !this.state.isOpen });
+    }
+
+    openDoor = async () => {
+        api.post("/open/1");
+    }
+
+    closeDoor = async () => {
+        api.post("/close/1");
     }
 
     render() {
