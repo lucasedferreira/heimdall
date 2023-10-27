@@ -9,7 +9,7 @@ Install these dependencies in your system, using the system package manager:
 - docker-compose
 - psql
 
-## 🚀 Getting start
+## 🚀 Getting started
 
 Install npm packages
 ```
